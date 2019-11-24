@@ -42,7 +42,7 @@ def delete(id):
         db.session.commit()
         return redirect('/')
     except:
-        return 'Był problem z usuwaniem taska'
+        return 'Był problem z dodawaniem taska'
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
@@ -55,7 +55,7 @@ def update(id):
             db.session.commit()
             return redirect('/')
         except:
-            return 'Był problem z updateowaniem taska'
+            return 'There was an issue updating your task'
 
     else:
         return render_template('update.html', task=task)
